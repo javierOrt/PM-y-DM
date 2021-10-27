@@ -2,4 +2,6 @@
     <string name="app_name">T03_inicio</string>
     <string name="main_text">Primera aplicacion de android</string>
     <string name="button_text">Pulsar</string>
+    <string name="text_click_b1">VIVA ANDROID 1</string>
+    <string name="text_click_b2">VIVA ANDROID 2</string>
 </resources>
