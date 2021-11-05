@@ -2,48 +2,73 @@ package com.example.t03_inicio;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.TextView;
 
-public class FordActivity extends AppCompatActivity {
+import com.example.t03_inicio.utils.Persona;
 
-    private TextView textApellido,textNombre,textTelefono;
-    //private CheckBox textCheckExperience;
-    String nombre,apellido;
-    int telefono;
-    boolean experiencia;
+public class FordActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private TextView textNombre, textApellido, textTelefono;
+    private CheckBox checkExperiencia;
+    private Button botonContestar;
+    private String nombre, apellido;
+    private int telefono;
+    private boolean experiencia;
+    private Persona personaRecuperada;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ford);
-        if (getIntent().getExtras() != null){
+        instancias();
+        if (getIntent().getExtras() != null ){
             recuperarDatos();
-            instancias();
-            acciones();
+            setearDatos();
         }
+        acciones();
     }
 
     private void acciones() {
-        textNombre.setText(nombre);
-        textApellido.setText(apellido);
+        botonContestar.setOnClickListener(this);
+    }
+
+    private void setearDatos() {
+        textNombre.setText(personaRecuperada.getNombre());
+        textApellido.setText(personaRecuperada.getApellido());
+        textTelefono.setText(String.valueOf(personaRecuperada.getTelefono()));
+        checkExperiencia.setChecked(personaRecuperada.isExperiencia());
     }
 
     private void instancias() {
-            textNombre = findViewById(R.id.datosNombre);
-            textApellido = findViewById(R.id.datosApellido);
-            textTelefono = findViewById(R.id.datosTelefono);
-            //textCheckExperience = findViewById(R.id.datosCheck);
+        textNombre = findViewById(R.id.nombre_recuperado);
+        textApellido = findViewById(R.id.apellido_recuperado);
+        textTelefono = findViewById(R.id.telefono_recuperado);
+        checkExperiencia = findViewById(R.id.experiencia_recuperado);
+        botonContestar = findViewById(R.id.boton_contestar);
     }
 
     private void recuperarDatos() {
-        nombre = getIntent().getExtras().getString("nombre","");
-        apellido = getIntent().getExtras().getString("apellido","");
-        telefono = getIntent().getExtras().getInt("telefono",0);
-        experiencia = getIntent().getExtras().getBoolean("experiencia",false);
+        personaRecuperada = (Persona)getIntent().getExtras().getSerializable("persona");
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent();
+        personaRecuperada.setApellido("ApellidoModificado");
+        personaRecuperada.setExperiencia(checkExperiencia.isChecked());
+        intent.putExtra("persona",personaRecuperada);
+
+        if (!checkExperiencia.isChecked()){
+            setResult(0,intent);
+        } else {
+            setResult(1,intent);
+        }
+        finish();
     }
 }
