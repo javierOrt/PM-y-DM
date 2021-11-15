@@ -8,11 +8,11 @@ public class Persona implements Serializable {
     private int telefono;
     private boolean experiencia;
 
-    public Persona(String nombre, String apellido, int telefono, boolean experiencia) {
+    public Persona(String nombre, String apellido, int telefono /*,boolean experiencia */) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
-        this.experiencia = experiencia;
+        //this.experiencia = experiencia;
     }
 
     public String getNombre() {
@@ -38,7 +38,7 @@ public class Persona implements Serializable {
     public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
-
+/*
     public boolean isExperiencia() {
         return experiencia;
     }
@@ -46,4 +46,5 @@ public class Persona implements Serializable {
     public void setExperiencia(boolean experiencia) {
         this.experiencia = experiencia;
     }
+ */
 }

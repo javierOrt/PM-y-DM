@@ -17,7 +17,7 @@ import com.example.t03_inicio.utils.Persona;
 public class ThirdActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText editNombre, editApellido, editTelefono;
-    private CheckBox checkExperiencia;
+    //private CheckBox checkExperiencia;
     private Button botonPasar;
 
     @Override
@@ -36,7 +36,7 @@ public class ThirdActivity extends AppCompatActivity implements View.OnClickList
         editApellido = findViewById(R.id.edit_apellido);
         editNombre = findViewById(R.id.edit_nombre);
         editTelefono = findViewById(R.id.edit_telefono);
-        checkExperiencia = findViewById(R.id.check_experiencia);
+        //checkExperiencia = findViewById(R.id.check_experiencia);
         botonPasar = findViewById(R.id.boton_pasar);
     }
 
@@ -72,8 +72,8 @@ public class ThirdActivity extends AppCompatActivity implements View.OnClickList
                     String nombre = editNombre.getText().toString() ;
                     String apellido = editApellido.getText().toString();
                     int telefono = Integer.parseInt(editTelefono.getText().toString());
-                    boolean experiencia = checkExperiencia.isChecked();
-                    Persona persona = new Persona(nombre,apellido,telefono,experiencia);
+                    //boolean experiencia = checkExperiencia.isChecked();
+                    Persona persona = new Persona(nombre,apellido,telefono);
 
 
                     //Toast.makeText(getApplicationContext(),nombre+apellido+telefono+experiencia,Toast.LENGTH_SHORT).show();
@@ -84,11 +84,11 @@ public class ThirdActivity extends AppCompatActivity implements View.OnClickList
                     //intent.putExtra("telefono",telefono);
                     //intent.putExtra("experiencia",experiencia);
                     //startActivity(intent);
-                    if (experiencia) {
-                        startActivityForResult(intent, 1);
-                    } else{
-                        startActivityForResult(intent, 2);
-                    }
+                    //if (experiencia) {
+                    //    startActivityForResult(intent, 1);
+                    //} else{
+                    //    startActivityForResult(intent, 2);
+                    //}
 
                 }else {
                     Toast.makeText(getApplicationContext(),"Faltan datos",Toast.LENGTH_SHORT).show();
