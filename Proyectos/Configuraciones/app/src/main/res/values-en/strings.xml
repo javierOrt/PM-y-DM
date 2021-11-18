@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Configurations</string>
+    <string name="text_titulo">Configurations</string>
+    <string name="texto_botones">Click</string>
+    <string name="text_toast">Button clicked</string>
+</resources>
