@@ -1,135 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:layout_margin="20dp"
+    android:orientation="vertical"
     tools:context=".FordActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Datos Persona"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:layout_marginBottom="40dp"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="10dp">
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.40"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+
+            android:text="Nombre:"/>
 
         <TextView
             android:layout_width="0dp"
-            android:layout_weight="0.5"
+            android:layout_weight="0.6"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:text="Nombre"
-            />
+            android:textSize="20sp"
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="0.5"
-            android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:text="Lo que recibo"
-            />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="10dp">
-
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="0.45"
-            android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:text="Nombre"
-            />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="0.45"
-            android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:id="@+id/nombre_recuperado"
-            android:text="Lo que recibo"
-            />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="10dp">
-
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="0.45"
-            android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:text="Apellido"
-            />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="0.45"
-            android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:text="Lo que recibo"
-            android:id="@+id/apellido_recuperado"
-            />
-
+            android:id="@+id/recuperar_nombre"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.4"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Apellido:"/>
 
         <TextView
             android:layout_width="0dp"
-            android:layout_weight="0.45"
+            android:layout_weight="0.6"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:text="Telefono"
-            />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="0.45"
-            android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:text="Lo que recibo"
-            android:id="@+id/telefono_recuperado"
-            />
-
+            android:textSize="20sp"
+            android:id="@+id/recuperar_apellido"/>
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.4"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Telefono:"/>
 
         <TextView
             android:layout_width="0dp"
-            android:layout_weight="0.45"
+            android:layout_weight="0.6"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:text="Experiencia"
-            />
+            android:textSize="20sp"
+            android:id="@+id/recuperar_telefono"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.40"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Experencia:"/>
 
         <CheckBox
             android:layout_width="0dp"
-            android:layout_weight="0.45"
+            android:layout_weight="0.6"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:id="@+id/experiencia_recuperado"
-            />
-
+            android:textSize="20sp"
+            android:clickable="false"
+            android:id="@+id/recuperar_experiencia"/>
     </LinearLayout>
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
