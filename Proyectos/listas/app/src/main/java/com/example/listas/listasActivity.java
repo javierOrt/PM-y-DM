@@ -40,6 +40,7 @@ public class listasActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 //Toast.makeText(getApplicationContext(), adapterSpinner.getItem(position).toString(), Toast.LENGTH_SHORT).show();
                 Marcas marcaSeleccionada = (Marcas) adapterSpinner.getItem(position);
+                imagenMarcas.setImageResource(marcaSeleccionada.getImagen());
             }
 
             @Override
