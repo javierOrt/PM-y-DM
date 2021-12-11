@@ -21,7 +21,7 @@ public class listasActivity extends AppCompatActivity {
     private Spinner spinnerMarcas;
     private ImageView imagenMarcas;
     private ArrayAdapter adapterSpinner;
-    private ArrayList listaOpcionesSpinner;
+    private ArrayList<Marcas> listaOpcionesSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,3 +69,4 @@ public class listasActivity extends AppCompatActivity {
         imagenMarcas = findViewById(R.id.imagen_marcas);
     }
 }
+

@@ -9,7 +9,7 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    ImageButton shuffle,dados,premio;
+    private ImageButton shuffle,dados,premio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,16 +33,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+
+        Intent intent = new Intent();
+
         switch (v.getId()){
             case R.id.shuffle:
-                Intent intentShuffle = new Intent(getApplicationContext(),shuffleActivity.class);
+                intent = new Intent(getApplicationContext(),shuffleActivity.class);
                 break;
             case R.id.dados:
-                Intent intentDados = new Intent(getApplicationContext(),dadosActivity.class);
+                intent = new Intent(getApplicationContext(),dadosActivity.class);
                 break;
             case R.id.premio:
-                Intent intentPremio = new Intent(getApplicationContext(),premioActivity.class);
+                intent = new Intent(getApplicationContext(),premioActivity.class);
                 break;
         }
+        startActivity(intent);
     }
 }
