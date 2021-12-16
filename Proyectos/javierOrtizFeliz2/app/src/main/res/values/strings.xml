@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">javierOrtizFeliz2</string>
+    <string name="app_name">Spinners</string>
+    <string name="text_titulo_main">Seleccione el tipo de comida</string>
+    <string name="text_boton_main">VER RESULTADOS</string>
 </resources>

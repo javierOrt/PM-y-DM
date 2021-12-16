@@ -5,101 +5,81 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-import com.example.javierortizfeliz2.utils.Restaurante;
-
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
-
-    private Spinner spinnerTipoComida,spinnerLocalidad,spinnerValoracion;
-    private ArrayAdapter adapterSpinnerTipoComida,adapterSpinnerLocalidad,adapterSpinnerValoracion;
-    private ArrayList<String> listaTipoComidaSpinner,listaLocalidadSpinner,listaValoracionSpinner;
-    private ArrayList<Restaurante> lista;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btnResultados;
+    private Spinner spinnerComida, spinnerPuntuacion, spinnerLocalidad;
+    private ArrayList<String> arrayComida, arrayPuntuacion, arrayLocalidad;
+    private ArrayAdapter adapterComida, adapterPuntuacion, adapterLocalidad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         instancias();
         rellenarListas();
-        asociarElementos();
+        iniciarElementos();
         acciones();
     }
 
     private void acciones() {
-
+        btnResultados.setOnClickListener(this);
     }
 
-    private void rellenarListas() {
-        listaTipoComidaSpinner.add("China");
-        listaTipoComidaSpinner.add("Japonesa");
-        listaTipoComidaSpinner.add("Mediterranea");
-        listaTipoComidaSpinner.add("Italiana");
-        listaTipoComidaSpinner.add("Todas");
+    private void iniciarElementos() {
+        spinnerComida.setAdapter(adapterComida);
+        spinnerPuntuacion.setAdapter(adapterPuntuacion);
+        spinnerLocalidad.setAdapter(adapterLocalidad);
 
-        listaLocalidadSpinner.add("Madrid");
-        listaLocalidadSpinner.add("Alcobendas");
-        listaLocalidadSpinner.add("Majadahonda");
-        listaLocalidadSpinner.add("Pozuelo");
-        listaLocalidadSpinner.add("Alcorcón");
-
-        listaValoracionSpinner.add("1");
-        listaValoracionSpinner.add("2");
-        listaValoracionSpinner.add("3");
-        listaValoracionSpinner.add("4");
-        listaValoracionSpinner.add("5");
-        listaValoracionSpinner.add("6");
-        listaValoracionSpinner.add("7");
-        listaValoracionSpinner.add("8");
-        listaValoracionSpinner.add("9");
-        listaValoracionSpinner.add("10");
-
-        lista.add(new Restaurante("Italiano1","Madrid",4,"Italiano",9111));
-        lista.add(new Restaurante("Italiano2","Alcobendas",7,"Italiano",9222));
-        lista.add(new Restaurante("Italiano3","Pozuelo",9,"Italiano",9333));
-        lista.add(new Restaurante("Italiano4","Majadahonda",3,"Italiano",9444));
-        lista.add(new Restaurante("Italiano5","Madrid",9,"Italiano",9555));
-        lista.add(new Restaurante("Mediterraneo1","Madrid",6,"Mediterranea",9666));
-        lista.add(new Restaurante("Mediterraneo2","Alcobendas",7,"Mediterranea",9777));
-        lista.add(new Restaurante("Mediterraneo3","Pozuelo",5,"Mediterranea",9123));
-        lista.add(new Restaurante("Mediterraneo4","Majadahonda",2,"Mediterranea",9234));
-        lista.add(new Restaurante("Chino1","Madrid",10,"Chino",9345));
-        lista.add(new Restaurante("Chino2","Alcobendas",5,"Chino",9456));
-        lista.add(new Restaurante("Chino3","Pozuelo",6,"Chino",9567));
-        lista.add(new Restaurante("Japones1","Alcorcón",10,"Japones",8123));
-        lista.add(new Restaurante("Japones2","Alcobendas",5,"Japones",7123));
-        lista.add(new Restaurante("Japones3","Alcorcón",6,"Japones",6234));
-
-        adapterSpinnerTipoComida.notifyDataSetChanged();
-        adapterSpinnerLocalidad.notifyDataSetChanged();
-        adapterSpinnerValoracion.notifyDataSetChanged();
-    }
-
-    private void asociarElementos() {
-        spinnerTipoComida.setAdapter(adapterSpinnerTipoComida);
-        spinnerLocalidad.setAdapter(adapterSpinnerLocalidad);
-        spinnerValoracion.setAdapter(adapterSpinnerValoracion);
     }
 
     private void instancias() {
-        spinnerTipoComida = findViewById(R.id.tipoComida_spinner);
-        spinnerLocalidad = findViewById(R.id.localidad_spinner);
-        spinnerValoracion = findViewById(R.id.valoracion_spinner);
+        btnResultados = findViewById(R.id.btn_resultados);
 
-        listaTipoComidaSpinner = new ArrayList<>();
-        listaLocalidadSpinner = new ArrayList<>();
-        listaValoracionSpinner = new ArrayList<>();
-        lista = new ArrayList<>();
+        spinnerComida = findViewById(R.id.spinner_comida);
+        spinnerLocalidad = findViewById(R.id.spinner_localidad);
+        spinnerPuntuacion = findViewById(R.id.spinner_puntuacion);
 
-        adapterSpinnerTipoComida = new ArrayAdapter<>(getApplicationContext(),R.layout.support_simple_spinner_dropdown_item,listaTipoComidaSpinner);
-        adapterSpinnerLocalidad = new ArrayAdapter<>(getApplicationContext(),R.layout.support_simple_spinner_dropdown_item,listaLocalidadSpinner);
-        adapterSpinnerValoracion = new ArrayAdapter<>(getApplicationContext(),R.layout.support_simple_spinner_dropdown_item,listaValoracionSpinner);
+        arrayComida = new ArrayList<>();
+        arrayPuntuacion = new ArrayList<>();
+        arrayLocalidad = new ArrayList<>();
+
+        adapterComida = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_item, arrayComida);
+        adapterPuntuacion = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_item, arrayPuntuacion);
+        adapterLocalidad = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_item, arrayLocalidad);
+    }
+
+    private void rellenarListas() {
+        arrayComida.add("Chino");
+        arrayComida.add("Japones");
+        arrayComida.add("Mediterranea");
+        arrayComida.add("Italiano");
+        arrayComida.add("Todas");
+
+        arrayLocalidad.add("Madrid");
+        arrayLocalidad.add("Alcobendas");
+        arrayLocalidad.add("Majadahonda");
+        arrayLocalidad.add("Pozuelo");
+        arrayLocalidad.add("Alcorcon");
+
+        for (int i = 1; i < 11; i++) {
+            arrayPuntuacion.add(String.valueOf(i));
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(getApplicationContext(),RestauranteActivity.class);
+        intent.putExtra("tipo",adapterComida.getItem(spinnerComida.getSelectedItemPosition()).toString());
+        intent.putExtra("localidad",adapterLocalidad.getItem(spinnerLocalidad.getSelectedItemPosition()).toString());
+        intent.putExtra("puntuacion",Integer.parseInt(adapterPuntuacion.
+                getItem(spinnerPuntuacion.getSelectedItemPosition()).toString()));
+
+        startActivity(intent);
     }
 }
