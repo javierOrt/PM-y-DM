@@ -4,50 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Selecciones el tipo de comida"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:layout_marginBottom="20dp"/>
-
+        android:layout_height="0dp"
+        android:text="@string/text_titulo_main"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:layout_weight="0.15"
+        android:textColor="@color/gray"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="horizontal"
-        android:layout_marginBottom="20dp">
+        android:layout_weight="0.1"
+        android:weightSum="1">
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:id="@+id/spinner_comida"/>
 
         <Spinner
             android:layout_width="0dp"
-            android:layout_weight="0.33"
             android:layout_height="wrap_content"
-            android:id="@+id/tipoComida_spinner"/>
+            android:layout_weight="0.33"
+            android:id="@+id/spinner_localidad"/>
+
         <Spinner
             android:layout_width="0dp"
-            android:layout_weight="0.33"
             android:layout_height="wrap_content"
-            android:id="@+id/localidad_spinner"/>
-        <Spinner
-            android:layout_width="0dp"
             android:layout_weight="0.33"
-            android:layout_height="wrap_content"
-            android:id="@+id/valoracion_spinner"/>
+            android:id="@+id/spinner_puntuacion"/>
     </LinearLayout>
-
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/restaurant_icon"
-        android:layout_marginBottom="20dp"/>
-
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:src="@drawable/restaurant_icon"
+        android:layout_weight="0.65"/>
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ver resultados"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:layout_margin="20dp"
+        android:text="@string/text_boton_main"
         android:id="@+id/btn_resultados"/>
+
 
 </LinearLayout>
