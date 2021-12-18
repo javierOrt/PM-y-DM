@@ -6,6 +6,8 @@ import android.os.Bundle;
 
 public class shuffleActivity extends AppCompatActivity {
 
+    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

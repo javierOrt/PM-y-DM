@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Aleatorios</string>
+    <string name="btn_text">Realizar tirada</string>
+    <string name="btn_ganador">Generar ganador</string>
+    <string name="btn_jugador">Agregar jugador</string>
+    <string name="textJugador">Introduce un nombre: </string>
 </resources>
