@@ -4,4 +4,14 @@
     <string name="btn_ganador">Generar ganador</string>
     <string name="btn_jugador">Agregar jugador</string>
     <string name="textJugador">Introduce un nombre: </string>
+    <string name="textGenerarAleatorios">Generar aleatorios </string>
+    <string name="textRadioSinRango">Sin rango especifico </string>
+    <string name="textRadioRango">Con rango especifico </string>
+    <string name="editTextMinimo">Minimo </string>
+    <string name="editTextMaximo">Maximo </string>
+    <string name="chechBoxDecimales">Permitir decimales </string>
+    <string name="editTextDecimales">Numero de decimales </string>
+    <string name="editTextEnteros">Numero de enteros </string>
+    <string name="textEnteros">Cuantos quieres generar </string>
+    <string name="textRepetirNumero">Repetir números </string>
 </resources>

@@ -2,6 +2,7 @@ package com.example.elementos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     }
 
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 

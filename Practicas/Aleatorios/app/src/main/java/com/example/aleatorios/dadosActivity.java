@@ -26,7 +26,6 @@ public class dadosActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
                 int numAleatorio=(int)Math.floor(Math.random()*(5+1));
 
                 if (numAleatorio==0){
